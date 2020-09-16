@@ -14,7 +14,7 @@ function clearUrlHash() {
 
 function App() {
   const [{ user, token }, dispatch] = useDataLayer();
-
+  console.log(process.env)
   useEffect(() => {
     const _token = getTokenFromUrl();
     clearUrlHash();
