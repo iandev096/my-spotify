@@ -37,7 +37,6 @@ function Body({ spotify }: Props): ReactElement {
     shuffleSelectedAlbum();
   }, [shuffleSelectedAlbum]);
 
-
   return (
     <div className='body'>
       <Header spotify={spotify} />
