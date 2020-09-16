@@ -10,7 +10,7 @@ type STKey = keyof SpotifyToken;
 // https://developer.spotify.com/documentation/web-playback-sdk/quick-start/#
 export const authEndpoint = "https://accounts.spotify.com/authorize";
 const clientId = "844808a85c3e41fe8b00eb63fe396301";
-const redirectUri = "http://localhost:3000/";
+const redirectUri = process?.env.redirect_url ?? "http://localhost:3000/";
 
 // we use scopes to inform spotify which scopes withing spotify we want our app to use. Think of it as permissions.
 const scopes = [
