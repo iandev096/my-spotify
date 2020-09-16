@@ -7,7 +7,7 @@ export interface DataLayerState {
   albums?: SpotifyApi.UsersSavedAlbumsResponse;
   token: SpotifyToken,
   playing: boolean;
-  item: any;
+  item: SpotifyApi.TrackObjectFull | null;
 }
 
 export type DataLayerAction = {
@@ -25,7 +25,15 @@ export type DataLayerAction = {
 } | {
   type: 'SET_NEW_RELEASES',
   newReleases: SpotifyApi.ListOfNewReleasesResponse
+} | {
+  type: 'SET_ITEM',
+  item: SpotifyApi.TrackObjectFull | null
+} | {
+  type: 'SET_PLAYING',
+  playing: boolean
 }
+
+
 
 export const initialState: DataLayerState = {
   user: undefined,
@@ -63,12 +71,24 @@ const reducer = (state: DataLayerState, action: DataLayerAction): DataLayerState
         albums: action.albums
       }
 
-      case 'SET_NEW_RELEASES':
-        return {
-          ...state,
-          newReleases: action.newReleases
-        }
-  
+    case 'SET_NEW_RELEASES':
+      return {
+        ...state,
+        newReleases: action.newReleases
+      }
+
+    case 'SET_ITEM':
+      return {
+        ...state,
+        item: action.item
+      }
+
+    case 'SET_PLAYING':
+      return {
+        ...state,
+        playing: action.playing
+      }
+
     default:
       return state
   }

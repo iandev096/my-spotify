@@ -36,9 +36,7 @@ function Body({ spotify }: Props): ReactElement {
   useEffect(() => {
     shuffleSelectedAlbum();
   }, [shuffleSelectedAlbum]);
-spotify.play().then(res => {
-  spotify.getMyCurrentPlayingTrack
-})
+
 
   return (
     <div className='body'>
