@@ -12,7 +12,7 @@ import SongRow from './SongRow/SongRow';
 
 
 interface Props {
-  spotify: SpotifyWebApi.SpotifyWebApiJs
+  spotify: SpotifyWebApi.SpotifyWebApiJs;
 }
 
 function Body({ spotify }: Props): ReactElement {
@@ -39,7 +39,7 @@ function Body({ spotify }: Props): ReactElement {
 
   return (
     <div className='body'>
-      <Header spotify={spotify} />
+      <Header  spotify={spotify} />
       <div className="body__info">
         <img src={album?.images && album.images[0].url} alt={album?.name} />
         <div className="body__infoText">

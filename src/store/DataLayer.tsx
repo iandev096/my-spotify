@@ -9,7 +9,7 @@ export interface DataLayerProps {
 export const DataLayerContext = createContext<[DataLayerState, React.Dispatch<DataLayerAction>]>([initialState, () => {}]);
 
 export const DataLayer: React.FC<DataLayerProps> = ({ initialState, children, reducer}) => {
-  useReducer(reducer, initialState)
+
   return (
     <DataLayerContext.Provider value={useReducer(reducer, initialState)}>
       {children}

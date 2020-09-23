@@ -8,6 +8,7 @@ export interface DataLayerState {
   token: SpotifyToken,
   playing: boolean;
   item: SpotifyApi.TrackObjectFull | null;
+  showSidebar: boolean;
 }
 
 export type DataLayerAction = {
@@ -31,9 +32,9 @@ export type DataLayerAction = {
 } | {
   type: 'SET_PLAYING',
   playing: boolean
+}| {
+  type: 'TOGGLE_SHOW_SIDEBAR'
 }
-
-
 
 export const initialState: DataLayerState = {
   user: undefined,
@@ -41,7 +42,8 @@ export const initialState: DataLayerState = {
   playlists: undefined,
   newReleases: undefined,
   playing: false,
-  item: null
+  item: null,
+  showSidebar: false
 };
 
 const reducer = (state: DataLayerState, action: DataLayerAction): DataLayerState => {
@@ -87,6 +89,12 @@ const reducer = (state: DataLayerState, action: DataLayerAction): DataLayerState
       return {
         ...state,
         playing: action.playing
+      }
+
+    case 'TOGGLE_SHOW_SIDEBAR':
+      return {
+        ...state,
+        showSidebar: !state.showSidebar
       }
 
     default:

@@ -50,7 +50,7 @@ function Footer(/*{ }: Props*/): ReactElement {
           <Grid item>
             <VolumeDownIcon />
           </Grid>
-          <Grid item xs>
+          <Grid className='footer__volume' item xs>
             <Slider aria-labelledby="continuous-slider" />
           </Grid>
         </Grid>

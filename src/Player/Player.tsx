@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import React, { ReactElement, useState } from 'react';
 import SpotifyWebApi from 'spotify-web-api-js';
 import './Player.css';
 import Sidebar from './Sidebar/Sidebar';
@@ -10,6 +10,7 @@ interface Props {
 }
 
 function Player({ spotify }: Props): ReactElement {
+
   return (
     <div className='player'>
       <div className="player__body">

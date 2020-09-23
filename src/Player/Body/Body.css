@@ -75,3 +75,22 @@
     transition: 100ms transform ease-in;
     transform: scale(1.08);
 }
+
+@media only screen and (max-width: 710px) {
+    .body__info {
+        flex-direction: column!important;
+        align-items: flex-start!important;
+    }
+
+    .body__info > img {
+        margin: initial;
+        margin-bottom: 20px;
+    } 
+}
+
+
+@media only screen and (max-width: 607px) {
+    .body {
+        flex: 1;
+    }
+}

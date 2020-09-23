@@ -15,7 +15,7 @@
   align-items: center;
 }
 
-.header__left > input {
+.header__left>input {
   border: none;
   width: 100%;
   outline: none;
@@ -25,6 +25,30 @@
   display: flex;
   align-items: center;
 }
-.header__right  > h4 {
+
+.header__right>h4 {
   margin-left: 10px;
+}
+
+.header__menuButton {
+  display: none!important;
+  color: white!important;
+}
+
+@media only screen and (max-width: 607px) {
+  .header__menuButton {
+    display: flex!important;
+  }
+  .header__right>h4 {
+    flex-direction: column;
+  }
+  .header__right>h4 {
+    margin-left: 10px;
+  }
+}
+
+@media only screen and (max-width: 495px) {
+  .header__right {
+    display: none ;
+  }
 }
